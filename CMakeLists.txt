@@ -25,6 +25,7 @@ set (CPACK_PACKAGE_VERSION_MAJOR ${GLOG_MAJOR_VERSION})
 set (CPACK_PACKAGE_VERSION_MINOR ${GLOG_MINOR_VERSION})
 set (CPACK_PACKAGE_VERSION_PATCH ${GLOG_PATCH_VERSION})
 set (CPACK_PACKAGE_VERSION ${GLOG_VERSION})
+set (CMAKE_DEBUG_POSTFIX "_d")
 
 option (WITH_GFLAGS "Use gflags" ON)
 option (WITH_THREADS "Enable multithreading support" ON)
@@ -609,7 +610,6 @@ write_basic_package_version_file (glog-config-version.cmake VERSION
   ${GLOG_VERSION} COMPATIBILITY SameMajorVersion)
 
 export (TARGETS glog NAMESPACE glog:: FILE glog-targets.cmake)
-export (PACKAGE glog)
 
 install (FILES
   ${CMAKE_CURRENT_BINARY_DIR}/glog-config.cmake
